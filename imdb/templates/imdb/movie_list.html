@@ -6,7 +6,7 @@
 		<div class="movies">
 			{% for movie in object_list %}
 			<div class="mov">
-				<a href="single.html">
+				<a href="">
 					<img alt="{{movie.judul_movie}}" height="300" src="{{movie.poster_movie}}" width="200">
 					<h2 class="movietitle">{{movie.judul_movie}}</h2>
 				</a>
@@ -14,18 +14,32 @@
 			{% endfor %}
 
 		</div>
-		<nav class="pagination">
-			<ul>
-				<li><a href="#">Prev</a></li>
-				<li><a href="#">1</a></li>
-				<li><a href="#" class="menuactive">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">...</a></li>
-				<li><a href="#">20</a></li>
-				<li><a href="#">21</a></li>
-				<li><a href="#">Next</a></li>
-			</ul>
-		</nav>
+		{% if is_paginated %}
+			<nav class="pagination">
+				<ul>
+					{% if object_list.has_previous  %}
+						<li><a href="?page={{ page_obj.previous_page_number }}">Prev</a></li>
+					{% else %}
+						<li class="disabled"></li>
+					{% endif %}
+
+					{% for pages in page_obj.paginator.page_range %}
+						{% if object_list.number == pages %}
+							<li><a href="#">{{pages}}</a></li>
+						{% else %}
+							<li><a href="?page={{pages}}">{{pages}}</a></li>
+						{% endif %}
+					{% endfor %}
+					
+					{% if object_list.has_next %}
+						<li><a href="?pages={{ page_obj.next_page_number }}">Next</a></li>
+					{% else %}
+						<li class="disabled"></li>
+					{% endif %}
+				</ul>
+			</nav>
+		{% endif %}
+			
 	</section>
 
 </main>
