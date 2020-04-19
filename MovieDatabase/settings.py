@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'MovieDatabase.urls'
+ROOT_URLCONF = 'uetimdb.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'MovieDatabase.wsgi.application'
+WSGI_APPLICATION = 'uetimdb.wsgi.application'
 
 
 # Database
