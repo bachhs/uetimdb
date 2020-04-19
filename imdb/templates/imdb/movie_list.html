@@ -17,7 +17,7 @@
 		{% if is_paginated %}
 			<nav class="pagination">
 				<ul>
-					{% if object_list.has_previous  %}
+					{% if page_obj.has_previous %}
 						<li><a href="?page={{ page_obj.previous_page_number }}">Prev</a></li>
 					{% else %}
 						<li class="disabled"></li>
@@ -31,8 +31,8 @@
 						{% endif %}
 					{% endfor %}
 					
-					{% if object_list.has_next %}
-						<li><a href="?pages={{ page_obj.next_page_number }}">Next</a></li>
+					{% if page_obj.has_next %}
+						<li><a href="?page={{ page_obj.next_page_number }}">Next</a></li>
 					{% else %}
 						<li class="disabled"></li>
 					{% endif %}

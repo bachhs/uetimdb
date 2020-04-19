@@ -8,5 +8,6 @@ class MovieList(ListView):
     paginate_by = 15
 
 
-class MovieDetail(ListView):
+class MovieDetail(DetailView):
     model = Movie
+    slug_field = 'id_movie'
