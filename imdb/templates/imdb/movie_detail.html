@@ -4,10 +4,10 @@
 	<div class="single">
 
 		<section class="movie">
-			<img alt="{{movie.judul_movie}}" height="300" src="{{movie.poster_movie}}" width="200">
+			<img alt="{{movie.title_movie}}" height="300" src="{{movie.poster_movie}}" width="200">
 			<ul>
 				<li>{{object}}</li>
-				<li>{{object.deskripsi_movie}}</li>
+				<li>{{object.description_movie}}</li>
 				<li><a href="genre.html">Adventure</a>, <a href="genre.html">Drama</a>, <a href="genre.html">Romance</a>
 				</li>
 				<li><a href="cast.html">Gary Oldman</a>, <a href="cast.html">Asa Butterfield</a></li>
@@ -27,15 +27,15 @@
 				<img src="{{movie.poster_movie}}">
 			</div>
 			<div class="content">
-				<a class="td" href="#">{{movie}}<span class="movie-year"> ({{movie.tahun_movie}})</span> </a>
+				<a class="td" href="#">{{movie}}<span class="movie-year"> ({{movie.year_movie}})</span> </a>
 				<p class="text-muted">
-					<span class="runtime">{{movie.durasi_movie}}</span>
+					<span class="runtime">{{movie.duration_movie}}</span>
 					<span class="ghost">|</span>
 					<span class="genre">Crime, Drama</span>
 				</p>
 				<div class="rating" style="color: yellow; font-size: 30px; padding: 5px;">{{movie.rating_movie}}</div>
 				<p class="text-muted-2">
-					{{movie.deskripsi_movie}}
+					{{movie.description_movie}}
 				</p>
 				<p class="caster">
 					Director:

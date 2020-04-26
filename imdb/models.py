@@ -5,46 +5,55 @@ from django.shortcuts import get_object_or_404
 
 class Movie(models.Model):
     id_movie = models.IntegerField(primary_key=True, unique=True)
-    judul_movie = models.CharField(max_length=200, null=False)
-    tahun_movie = models.CharField(max_length=20, null=True)
+    title_movie = models.CharField(max_length=200, null=False)
+    year_movie = models.CharField(max_length=20, null=True)
     gross_movie = models.IntegerField(null=True)
     rating_movie = models.FloatField(null=True)
     meta_movie = models.FloatField(null=True)
     vote_movie = models.IntegerField(null=True)
     rate_movie = models.CharField(max_length=50, null=True)
-    durasi_movie = models.CharField(max_length=50, null=True)
-    deskripsi_movie = models.TextField(null=True)
+    duration_movie = models.CharField(max_length=50, null=True)
+    description_movie = models.TextField(null=True)
     link_movie = models.CharField(max_length=200, null=True)
     poster_movie = models.TextField(null=True)
     dt_movie = models.DateTimeField(null=True)
 
+    class Meta:
+        ordering = ['-year_movie']
+
     def __str__(self):
-        return self.judul_movie
+        return self.title_movie
 
 
 class Genre(models.Model):
     id_genre = models.IntegerField(primary_key=True)
-    nama_genre = models.CharField(max_length=100, null=True)
+    name_genre = models.CharField(max_length=100, null=True)
+
+    class Meta:
+        ordering = ['name_genre']
 
     def __str__(self):
-        return self.nama_genre
+        return self.name_genre
 
 
 class Name(models.Model):
     id_name = models.IntegerField(primary_key=True)
-    nama_name = models.CharField(max_length=100, null=True)
-    dob_name = models.DateField(null=True)
-    pob_name = models.CharField(max_length=500, null=True)
-    dod_name = models.DateField(null=True)
-    pod_name = models.CharField(max_length=500, null=True)
-    birth_name_name = models.CharField(max_length=200, null=True)
+    name_name = models.CharField(max_length=100, null=True)
+    dateOfBirth_name = models.DateField(null=True)
+    placeOfBirth_name = models.CharField(max_length=500, null=True)
+    dateOfDeath_name = models.DateField(null=True)
+    placeOfDeath_name = models.CharField(max_length=500, null=True)
+    birthName_name = models.CharField(max_length=200, null=True)
     height_name = models.CharField(max_length=20, null=True)
     bio_name = models.TextField(null=True)
     poster_name = models.TextField(null=True)
     link_name = models.TextField(null=True)
 
+    class Meta:
+        ordering = ['name_name']
+
     def __str__(self):
-        return self.nama_name
+        return self.name_name
 
 
 class Movie_Cast(models.Model):
