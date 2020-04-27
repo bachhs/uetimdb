@@ -1,24 +1,5 @@
 {% extends 'base.html' %}
 {% block body %}
-<!-- <main class="content">
-	<div class="single">
-
-		<section class="movie">
-			<img alt="{{movie.title_movie}}" height="300" src="{{movie.poster_movie}}" width="200">
-			<ul>
-				<li>{{object}}</li>
-				<li>{{object.description_movie}}</li>
-				<li><a href="genre.html">Adventure</a>, <a href="genre.html">Drama</a>, <a href="genre.html">Romance</a>
-				</li>
-				<li><a href="cast.html">Gary Oldman</a>, <a href="cast.html">Asa Butterfield</a></li>
-				<li>
-					<h1>Star {{object.rating_movie}}</h1>/10 ({{object.vote_movie}})
-				</li>
-			</ul>
-		</section>
-
-	</div>
-</main> -->
 
 <main class="content">
 	<div class="single">
@@ -31,7 +12,10 @@
 				<p class="text-muted">
 					<span class="runtime">{{movie.duration_movie}}</span>
 					<span class="ghost">|</span>
-					<span class="genre">Crime, Drama</span>
+					{% for genre in genre_list %}
+						<span class="genre">{{genre.id_genre}}</span>
+					{% endfor %}
+					
 				</p>
 				<div class="rating" style="color: yellow; font-size: 30px; padding: 5px;">{{movie.rating_movie}}</div>
 				<p class="text-muted-2">
