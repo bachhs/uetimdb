@@ -5,12 +5,13 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Movies</title>
+	<title>RUNE FILM HD PRO</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
 	<!-- Link Swiper's CSS -->
 	<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
 	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<link rel="stylesheet" href="{%static 'fontawesome/fontawesome-free-5.13.0-web/css1/all.css' %}">
 
 	<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
 	<script src="{% static 'js/script.js' %}"></script>
@@ -28,7 +29,7 @@
 	<div class="wrapper">
 
 		<header class="header">
-			<figure class="logo"><a href=""><img src="{% static 'img/logo.png' %}" alt="Logo"></figure></a>
+			<figure class="logo"><a href=""><h2>R U N E FILMS</h2></figure></a>
 			<nav class="menu">
 				<ul>
 					<li><a href="index.html">Home</a></li>
@@ -57,46 +58,6 @@
 
 			<div class="toggle"><img src="img/menu.svg"></div>
 		</header>
-		<!-- Swiper -->
-		<div class="homeslider">
-			<div class="swiper-container">
-
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<img src="images/slider/poster2.jpg">
-						<div class="caption">
-							<div class="captioninside">
-								<h3>Movie Title</h3>
-								<p>Lorem ipsum dolor siamet</p>
-								<a href="single.html" class="playbutton">Play</a>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<img src="images/slider/poster1.jpg">
-						<div class="caption">
-							<div class="captioninside">
-								<h3>Movie Title 2</h3>
-								<p>Lorem ipsum dolor siamet</p>
-								<a href="single.html" class="playbutton">Play</a>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<img src="images/slider/poster2.jpg">
-						<div class="caption">
-							<div class="captioninside">
-								<h3>Movie Title 3</h3>
-								<p>Lorem ipsum dolor siamet</p>
-								<a href="single.html" class="playbutton">Play</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Add Pagination -->
-				<div class="swiper-pagination"></div>
-			</div>
-		</div>
 
 		{% block body %}
 		
@@ -107,20 +68,23 @@
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="contact.html">Contact</a></li>
-					<li><a href="terms.html">Terms and conditions</a></li>
+					<li><a href="terms.html">Donate</a></li>
 				</ul>
 			</div>
 			<div class="tags">
 				<ul>
 					<li>Watch Free Movies Trailers</li>
-					<li>Movie Trailers</li>
-					<li>English Subtitled Movies Trailers</li>
+					<li>RUNE films Pro</li>
+					<li>Donate for Rune Flims </li>
 					<li>Latest Movies Trailers</li>
 					<li>New Movies Trailers</li>
 
 				</ul>
 			</div>
-
+			<div class="donate" style="margin-bottom: 20px;">
+				<h1 style="color: red;">DONATE:</h1>
+				<h2 style="color: aliceblue;">AgriBank: 391848926492432  -  Momo: 0387005857  -  Donate Skin in game: VS Yi </h2>
+			</div>
 		</footer>
 
 		<!-- Swiper JS -->

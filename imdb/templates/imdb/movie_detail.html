@@ -9,7 +9,7 @@
 			</div>
 			<div class="content">
 				<a class="td" href="#">{{movie}}<span class="movie-year"> ({{movie.year_movie}})</span> </a>
-				<p class="text-muted">
+				<p class="text-muted" style="margin-top: 8px; font-size: 12px;">
 					<span class="runtime">{{movie.duration_movie}}</span>
 					<span class="ghost">|</span>
 					{% for genre in genre_list %}
@@ -17,7 +17,10 @@
 					{% endfor %}
 					
 				</p>
-				<div class="rating" style="color: yellow; font-size: 30px; padding: 5px;">{{movie.rating_movie}}</div>
+				<div class="rating" >
+					<i class="fas fa-star" style="font-size: 30px; border-bottom: 5px; color: yellow; cursor: pointer;"></i> {{movie.rating_movie}}                 
+					<i class="far fa-star" style="margin-left: 40px; cursor: pointer;"></i> Rate
+				</div>
 				<p class="text-muted-2">
 					{{movie.description_movie}}
 				</p>
@@ -26,7 +29,7 @@
 					{% for director in director_list %}
 						<a class="cast" href="#">{{director.id_name}}</a>,
 					{% endfor %}
-					<span class="ghost"></span>
+					<br> <br>
 					Star:
 					{% for cast in cast_list %}
 						<a class="cast" href="#">{{cast.id_name}}</a>,
@@ -38,33 +41,17 @@
 					<span name="nv" data-value="223871">{{movie.vote_movie}}</span>
 					<span class="ghost">|</span>
 					<span class="vts">Gross:</span>
-					<span name="nv" data-value="{{movie.gross_movie}}">${{movie.gross_movie}}</span>
+					<span name="nv" data-value="{{movie.gross_movie}}">$ {{movie.gross_movie}}</span>
 				</p>
 			</div>
 		</section>
 
-		<section class="links">
-			<h3>Links</h3>
-			<ul class="dlinks">
-				<li><a>Download</a></li>
-				<li><a href="#">Link1</a></li>
-				<li><a href="#">Link2</a></li>
-				<li><a href="#">Link3</a></li>
-			</ul>
-			<ul class="wlinks">
-				<li><a>Watch</a></li>
-				<li><a href="#">Link1</a></li>
-				<li><a href="#">Link2</a></li>
-				<li><a href="#">Link3</a></li>
-			</ul>
-		</section>
+		
 
 		<section class="trailer">
 			<h3>Trailer</h3>
 			<div class="trailer_frame">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/sY1S34973zA" frameborder="0"
-					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen></iframe>
+				<iframe width="907" height="377" src="https://www.youtube.com/embed/6ZfuNTqbHE8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</section>
 		{% endblock body %}
