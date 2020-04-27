@@ -8,7 +8,7 @@
 				<img src="{{movie.poster_movie}}">
 			</div>
 			<div class="content">
-				<a class="td" href="#">{{movie}}<span class="movie-year"> ({{movie.year_movie}})</span> </a>
+				<a class="td" href="#">{{movie}} </a> <span class="movie-year"> ({{movie.year_movie}})</span> 
 				<p class="text-muted" style="margin-top: 8px; font-size: 12px;">
 					<span class="runtime">{{movie.duration_movie}}</span>
 					<span class="ghost">|</span>
@@ -18,7 +18,7 @@
 					
 				</p>
 				<div class="rating" >
-					<i class="fas fa-star" style="font-size: 30px; border-bottom: 5px; color: yellow; cursor: pointer;"></i> {{movie.rating_movie}}                 
+					<i class="fas fa-star" style="font-size: 30px; border-bottom: 5px; color: yellow;"></i> {{movie.rating_movie}}                 
 					<i class="far fa-star" style="margin-left: 40px; cursor: pointer;"></i> Rate
 				</div>
 				<p class="text-muted-2">
@@ -27,12 +27,12 @@
 				<p class="caster">
 					Director:
 					{% for director in director_list %}
-						<a class="cast" href="#">{{director.id_name}}</a>,
+						<a class="cast" href="https://vi.wikipedia.org/wiki/{{director.id_name}}" target="_blank">{{director.id_name}}</a>,
 					{% endfor %}
 					<br> <br>
 					Star:
 					{% for cast in cast_list %}
-						<a class="cast" href="#">{{cast.id_name}}</a>,
+						<a class="cast" href="https://vi.wikipedia.org/wiki/{{cast.id_name}}" target="_blank">{{cast.id_name}}</a>,
 					{% endfor %}
 
 				</p>
@@ -51,7 +51,7 @@
 		<section class="trailer">
 			<h3>Trailer</h3>
 			<div class="trailer_frame">
-				<iframe width="907" height="377" src="https://www.youtube.com/embed/6ZfuNTqbHE8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe width="853" height="480" src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</section>
 		{% endblock body %}
