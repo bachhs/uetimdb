@@ -16,6 +16,7 @@ class Movie(models.Model):
     description_movie = models.TextField(null=True)
     link_movie = models.CharField(max_length=200, null=True)
     poster_movie = models.TextField(null=True)
+    trailer_movie = models.TextField(null=True)
     dt_movie = models.DateTimeField(null=True)
 
     class Meta:
