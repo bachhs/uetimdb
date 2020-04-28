@@ -6,7 +6,7 @@
 		<div class="movies">
 			{% for movie in object_list %}
 			<div class="mov">
-				<a href="">
+				<a href="{% url 'imdb:movie_detail' movie.id_movie %}">
 					<img alt="{{movie.title_movie}}" height="300" src="{{movie.poster_movie}}" width="200">
 					<h2 class="movietitle">{{movie.title_movie}}</h2>
 				</a>
