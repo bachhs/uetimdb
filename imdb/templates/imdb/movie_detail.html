@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
-
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=252464779146967&autoLogAppEvents=1"></script>
 <main class="content">
 	<div class="single">
 		<section class="block-movie-content">
@@ -54,4 +55,5 @@
 				<iframe width="560" height="315" src="{{movie.trailer_movie}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</section>
+		<div class="fb-comments" data-colorscheme="dark" data-href="https://uetimdb.herokuapp.com/movie/{{movie.id_movie}}" data-numposts="5" data-width=""></div>
 		{% endblock body %}

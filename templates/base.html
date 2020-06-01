@@ -21,7 +21,9 @@
 	<div class="wrapper">
 
 		<header class="header">
-			<figure class="logo"><a href=""><h2>R U N E FILMS</h2></figure></a>
+			<figure class="logo"><a href="">
+					<h2>R U N E FILMS</h2>
+			</figure></a>
 			<nav class="menu">
 				<ul>
 					<li><a href="index.html">Home</a></li>
@@ -41,10 +43,16 @@
 							<li><a href="year.html">2017</a></li>
 						</ul>
 					</li>
+					<li class="mobsearch">
+						<form class="mobform" method="GET"> 
+							<input type="text" name="query" value="{{request.GET.q}}" class="mobsearchfield" placeholder="Search...">
+							<input type="submit" value="" class="mobsearchsubmit">
+						</form>
+					</li>
 				</ul>
 			</nav>
-			<form class="search">
-				<input type="text" name="s" class="searchfield" placeholder="Search...">
+			<form class="search" method="GET" action="{% url 'imdb:movie_search' %}">
+				<input type="text" name="query" value="{{request.GET.q}}" class="searchfield" placeholder="Search...">
 				<input type="submit" value="" class="searchsubmit">
 			</form>
 
@@ -52,32 +60,27 @@
 		</header>
 
 		{% block body %}
-		
+
 		{% endblock body %}
 
 		<footer class="footer">
-			<div class="copyright" style="color: silver;"><p>Copyright &copy 2020 by RUNE Team</p></div>
+			<div class="copyright" style="color: silver;">
+				<p>Copyright &copy 2020 by RUNE Team</p>
+			</div>
 			<div class="footermenu">
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="contact.html">Contact</a></li>
-					<li><a href="terms.html">Donate</a></li>
 				</ul>
 			</div>
 			<div class="tags">
 				<ul>
 					<li>Watch Free Movies Trailers</li>
 					<li>RUNE Films Pro</li>
-					<li>Donate for Rune Team </li>
 					<li>Latest Movies Trailers</li>
 					<li>New Movies Trailers</li>
 
 				</ul>
-			</div>
-			<div class="donate" style="margin-bottom: 20px;">
-				<h1 style="color: red;">DONATE:</h1>
-				<h2 style="color: aliceblue;">Momo: 0358144758  -  Donate Skin in game: bachhs </h2>
-				<h2 style="color: aliceblue;">Momo: 0387005857  -  Donate Skin in game: VS Yi </h2>
 			</div>
 		</footer>
 
