@@ -55,7 +55,7 @@ body{font-family: arial,sans-serif; background-color: #191919; position: relativ
 
 
 .search{float: left;margin: 0 20px;}
-.searchfield{float: left; width: 200px;margin: 10px 0; border-bottom: 1px solid transparent; border-right:none;border-left:none; border-top:none; padding:5px 0px; background: transparent;outline: none;}
+.searchfield{float: left; width: 200px;margin: 10px 0; margin-left: 850px; border-bottom: 1px solid transparent; border-right:none;border-left:none; border-top:none; padding:5px 0px; background: transparent;color: whitesmoke; outline: none;}
 .searchfield:focus{border-bottom: 1px solid #a0a0a0;}
 .searchsubmit{cursor:pointer;float: left;background: transparent;border: none;background-size: 16px;background-image: url(../img/search.svg);width: 20px;height: 20px;margin: 10px 0;background-repeat: no-repeat;background-position: center;outline: none;}
 .mobsearch{display: none;}
