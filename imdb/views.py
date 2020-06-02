@@ -36,7 +36,7 @@ class MovieGenre(ListView):
 
 class MovieSearch(ListView):
     model = Movie
-    paginate_by = 1
+    paginate_by = 15
 
     def get_queryset(self):
         query = self.request.GET.get('query')
