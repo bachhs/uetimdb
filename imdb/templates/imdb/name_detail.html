@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block body %}
+<main class="content">
+    <div class="single">
+        <section class="block-movie-content">
+            <div class="movie-image">
+                <img src="{{name.poster_name}}">
+            </div>
+            <div class="content">
+                <a class="td" href="#">{{name}} </a> <span class="movie-year"> ({{name.dateOfBirth_name}})</span>
+                <p class="text-muted" style="margin-top: 8px; font-size: 12px;">
+                    <span class="runtime">{{movie.duration_movie}}</span>
+                    <span class="ghost">|</span>
+                    {% for genre in genre_list %}
+                    <span class="genre">{{genre.id_genre}}</span>
+                    {% endfor %}
+
+                </p>
+                <div class="rating">
+                    <i class="fas fa-star" style="font-size: 30px; border-bottom: 5px; color: yellow;"></i>
+                    {{movie.rating_movie}}
+                    <i class="far fa-star" style="margin-left: 40px; cursor: pointer;"></i> Rate
+                </div>
+                <p class="text-muted-2">
+                    {{movie.description_movie}}
+                </p>
+                <p class="caster">
+                    Director:
+                    {% for director in director_list %}
+                    <a class="cast" href="https://vi.wikipedia.org/wiki/{{director.id_name}}"
+                        target="_blank">{{director.id_name}}</a>,
+                    {% endfor %}
+                    <br> <br>
+                    Star:
+                    {% for cast in cast_list %}
+                    <a class="cast" href="https://vi.wikipedia.org/wiki/{{cast.id_name}}"
+                        target="_blank">{{cast.id_name}}</a>,
+                    {% endfor %}
+
+                </p>
+                <p class="votes-visible">
+                    <span class="vts">Votes:</span>
+                    <span name="nv" data-value="223871">{{movie.vote_movie}}</span>
+                    <span class="ghost">|</span>
+                    <span class="vts">Gross:</span>
+                    <span name="nv" data-value="{{movie.gross_movie}}">$ {{movie.gross_movie}}</span>
+                </p>
+            </div>
+        </section>
+
+        <section class="trailer">
+            <h3 style="color: yellow;">Trailer</h3>
+            <div class="trailer_frame">
+                <iframe width="560" height="315" src="{{movie.trailer_movie}}" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="FBcomment">
+            <h3 style="color: yellow; padding-left: 20px;">Bình luận về nhân vật</h3>
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous"
+                src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=252464779146967&autoLogAppEvents=1"></script>
+            <div class="fb-comments" data-colorscheme="dark"
+                data-href="https://uetimdb.herokuapp.com/movie/name/{{name.id_name}}" data-numposts="5"
+                data-width="100%"></div>
+        </section>
+    </div>
+</main>>
+
+
+{% endblock body %}

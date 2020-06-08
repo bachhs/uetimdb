@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.db.models import QuerySet
-from .models import Movie, Movie_Cast, Movie_Director, Movie_Genre
+from .models import Movie, Movie_Cast, Movie_Director, Movie_Genre, Name
 
 
 class MovieList(ListView):
@@ -48,3 +48,15 @@ class MovieSearch(ListView):
         else:
             object_list = self.model.objects.none()
         return object_list
+
+
+class NameDetail(DetailView):
+    model = Name
+
+    def get_object(self):
+        object = super(NameDetail, self).get_object()
+        return object
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
