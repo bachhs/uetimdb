@@ -7,53 +7,40 @@
                 <img src="{{name.poster_name}}">
             </div>
             <div class="content">
-                <a class="td" href="#">{{name}} </a> <span class="movie-year"> ({{name.dateOfBirth_name}})</span>
-                <p class="text-muted" style="margin-top: 8px; font-size: 12px;">
-                    <span class="runtime">{{movie.duration_movie}}</span>
-                    <span class="ghost">|</span>
-                    {% for genre in genre_list %}
-                    <span class="genre">{{genre.id_genre}}</span>
-                    {% endfor %}
-
-                </p>
-                <div class="rating">
-                    <i class="fas fa-star" style="font-size: 30px; border-bottom: 5px; color: yellow;"></i>
-                    {{movie.rating_movie}}
-                    <i class="far fa-star" style="margin-left: 40px; cursor: pointer;"></i> Rate
-                </div>
-                <p class="text-muted-2">
-                    {{movie.description_movie}}
-                </p>
-                <p class="caster">
-                    Director:
-                    {% for director in director_list %}
-                    <a class="cast" href="https://vi.wikipedia.org/wiki/{{director.id_name}}"
-                        target="_blank">{{director.id_name}}</a>,
-                    {% endfor %}
+                <a class="td" href="#">{{name}} </a>
+                <h3 style="color: yellow; opacity: 0.8; font-size: 28px; margin-top: 12px; margin-bottom: 8px;">
+                    <i class="fas fa-address-book" style="color: aqua; font-size: 15px;"></i>
+                    Overview
+                </h3>
+                <ul class="caster">
+                    <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
+                    Born: {{name.dateOfBirth_name}}
                     <br> <br>
-                    Star:
-                    {% for cast in cast_list %}
-                    <a class="cast" href="https://vi.wikipedia.org/wiki/{{cast.id_name}}"
-                        target="_blank">{{cast.id_name}}</a>,
-                    {% endfor %}
+                    <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
+                    Birth Name: {{name.birthName_name}}
+                    <br> <br>
+                    <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
+                    Height: {{name.height_name}} 
+                    <br> <br>
+                    <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
+                    Died: {{name.dateOfDeath_name}}
+                </ul>
+                <div class="bio">
+                    <h3 style="color: yellow; opacity: 0.8; font-size: 28px; margin-top: 12px; margin-bottom: 8px;">
+                        <i class="fas fa-address-card" style="color: aqua; font-size: 15px;"></i>
+                        Mini Biography
+                    </h3>
+                    
+                    <p style="color: #f5f5f5d6; font-family: Arial, Helvetica, sans-serif; font-weight: normal; font-size: 15px; letter-spacing: 0.5px;">
+                        <i class="fas fa-hand-point-right" style="font-size: 12px; color: whitesmoke;"> </i>
+                        {{name.bio_name}}
+                        <span id="dots">...</span><span id="more"></span>
+                        </span></p>
+                    <button onclick="myFunction()" id="myBtn">Read more</button>
+                </div>
+                
+                
 
-                </p>
-                <p class="votes-visible">
-                    <span class="vts">Votes:</span>
-                    <span name="nv" data-value="223871">{{movie.vote_movie}}</span>
-                    <span class="ghost">|</span>
-                    <span class="vts">Gross:</span>
-                    <span name="nv" data-value="{{movie.gross_movie}}">$ {{movie.gross_movie}}</span>
-                </p>
-            </div>
-        </section>
-
-        <section class="trailer">
-            <h3 style="color: yellow;">Trailer</h3>
-            <div class="trailer_frame">
-                <iframe width="560" height="315" src="{{movie.trailer_movie}}" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
             </div>
         </section>
 

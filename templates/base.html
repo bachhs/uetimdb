@@ -15,6 +15,9 @@
 
 	<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
 	<script src="{% static 'js/script.js' %}"></script>
+	<style>
+	#more {display: none;}
+	</style>
 </head>
 
 <body>
@@ -212,6 +215,24 @@
 
 
 		</script>
+
+		<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
 
 
 	</div>
