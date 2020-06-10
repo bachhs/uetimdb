@@ -30,33 +30,34 @@
                     <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
                     Died: {{name.dateOfDeath_name}}
                 </ul>
+                <div class="Filmography ">
+                    <h3 style="color: yellow; opacity: 0.8; font-size: 28px; margin-top: 10px; margin-bottom: 8px;">
+                        <i class="fas fa-film" style="color: aqua; font-size: 15px;"></i>
+                        Filmography
+                    </h3>
+
+                    {% for movie in movie_list %}
+                    <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
+                    <a class="cast" href="{% url 'imdb:movie_detail' movie.id_movie.id_movie %}"
+                        target="_blank">{{movie.id_movie}}</a>
+                    <br> <br>
+                    {% endfor %}
+                </div>
                 <div class="bio">
                     <h3 style="color: yellow; opacity: 0.8; font-size: 28px; margin-top: 12px; margin-bottom: 8px;">
                         <i class="fas fa-address-card" style="color: aqua; font-size: 15px;"></i>
                         Mini Biography
                     </h3>
 
-                    <p
-                        style="color: #f5f5f5d6; font-family: Arial, Helvetica, sans-serif; font-weight: normal; font-size: 15px; letter-spacing: 0.5px;">
-                        <i class="fas fa-hand-point-right" style="font-size: 12px; color: whitesmoke;"> </i>
-                        {{name.bio_name|slice:":200"}}
-                        <span id="dots">...</span>
-                        <span id="more">{{name.bio_name|slice:"200:"}}</span>
+                    <p style="color: #f5f5f5d6; font-family: Arial, Helvetica, sans-serif; font-weight: normal;
+                        font-size: 15px; letter-spacing: 0.5px;">
+                        <i class="fas fa-hand-point-right" style="font-size: 12px; color: whitesmoke;"></i>
+                        {{name.bio_name|slice:":200"}}<span id="dots">...</span><span
+                            id="more">{{name.bio_name|slice:"200:"}}</span>
                         <button onclick="myFunction()" id="myBtn">Read more</button>
+
                 </div>
-                <div class="Cinematography ">
-                    <h3 style="color: yellow; opacity: 0.8; font-size: 28px; margin-top: 10px; margin-bottom: 8px;">
-                        <i class="fas fa-film" style="color: aqua; font-size: 15px;"></i>
-                        Filmography
-                    </h3>
-                    
-                    {% for director in director_list %}
-                    <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
-					<a class="cast" href="{% url 'imdb:name_detail' director.id_name.id_name %}"
-                        target="_blank">{{director.id_name}}</a>
-                    <br> <br>
-					{% endfor %}
-                </div>
+
 
             </div>
         </section>
