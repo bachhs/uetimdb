@@ -4,7 +4,12 @@
     <div class="single">
         <section class="block-movie-content">
             <div class="movie-image">
-                <img src="{{name.poster_name}}">
+                {% if name.poster_name %}
+                <img alt="{{name.name_name}}" src="{{name.poster_name}}">
+                {% else %}
+                <img alt="{{name.name_name}}"
+                    src="https://m.media-amazon.com/images/G/01/imdb/images/nopicture/medium/name-2135195744._CB466677935_.png">
+                {% endif %}
             </div>
             <div class="content">
                 <a class="td" href="#">{{name}} </a>
@@ -20,7 +25,7 @@
                     Birth Name: {{name.birthName_name}}
                     <br> <br>
                     <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
-                    Height: {{name.height_name}} 
+                    Height: {{name.height_name}}
                     <br> <br>
                     <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
                     Died: {{name.dateOfDeath_name}}
@@ -30,16 +35,15 @@
                         <i class="fas fa-address-card" style="color: aqua; font-size: 15px;"></i>
                         Mini Biography
                     </h3>
-                    
-                    <p style="color: #f5f5f5d6; font-family: Arial, Helvetica, sans-serif; font-weight: normal; font-size: 15px; letter-spacing: 0.5px;">
+
+                    <p
+                        style="color: #f5f5f5d6; font-family: Arial, Helvetica, sans-serif; font-weight: normal; font-size: 15px; letter-spacing: 0.5px;">
                         <i class="fas fa-hand-point-right" style="font-size: 12px; color: whitesmoke;"> </i>
-                        {{name.bio_name}}
-                        <span id="dots">...</span><span id="more"></span>
-                        </span></p>
-                    <button onclick="myFunction()" id="myBtn">Read more</button>
+                        {{name.bio_name|slice:":200"}}
+                        <span id="dots">...</span>
+                        <span id="more">{{name.bio_name|slice:"200:"}}</span>
+                        <button onclick="myFunction()" id="myBtn">Read more</button>
                 </div>
-                
-                
 
             </div>
         </section>

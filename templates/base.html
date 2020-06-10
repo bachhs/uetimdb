@@ -29,7 +29,7 @@
 			</figure></a>
 			<nav class="menu">
 				<ul>
-					<li><a href="#">Home</a></li>
+					<li><a href="{% url 'imdb:name_list' %}">Biography</a></li>
 					<li><a>Genres</a>
 						<ul>
 							<li><a href="genre.html">Action</a></li>
@@ -52,13 +52,14 @@
 							<input type="submit" value="" class="mobsearchsubmit">
 						</form>
 					</li>
+					
 				</ul>
 			</nav>
 			<form class="search" method="GET" action="{% url 'imdb:movie_search' %}">
 				<input type="text" name="query" value="{{request.GET.q}}" class="searchfield" placeholder="Search...">
 				<input type="submit" value="" class="searchsubmit">
 			</form>
-
+			<a href="{% url 'admin:index' %}" class="playbutton">Login</a>
 			<div class="toggle"><img src="{% static 'img/menu.svg' %} "></div>
 		</header>
 

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<main class="content">
+	<section class="centered">
+		<div class="movies">
+			{% for name in object_list %}
+			<div class="mov">
+				<a href="{% url 'imdb:name_detail' name.id_name %}">
+					{% if name.poster_name %}
+					<img alt="{{name.name_name}}" height="300" src="{{name.poster_name}}" width="200">
+					{% else %}
+					<img alt="{{name.name_name}}" height="300"
+						src="https://m.media-amazon.com/images/G/01/imdb/images/nopicture/medium/name-2135195744._CB466677935_.png"
+						width="200">
+					{% endif %}
+
+					<h2 class="movietitle">{{name.name_name}}</h2>
+				</a>
+			</div>
+			{% endfor %}
+
+		</div>
+		{% if is_paginated %}
+		<nav class="pagination">
+			<ul>
+				{% if page_obj.has_previous %}
+				<li><a href="?page={{ page_obj.previous_page_number }}">Prev</a></li>
+				{% else %}
+				<li class="disabled"></li>
+				{% endif %}
+
+				{% for pages in page_obj.paginator.page_range %}
+				{% if object_list.number == pages %}
+				<li><a href="#">{{pages}}</a></li>
+				{% else %}
+				<li><a href="?page={{pages}}">{{pages}}</a></li>
+				{% endif %}
+				{% endfor %}
+
+				{% if page_obj.has_next %}
+				<li><a href="?page={{ page_obj.next_page_number }}">Next</a></li>
+				{% else %}
+				<li class="disabled"></li>
+				{% endif %}
+			</ul>
+		</nav>
+		{% endif %}
+
+	</section>
+
+</main>
+{% endblock body %}

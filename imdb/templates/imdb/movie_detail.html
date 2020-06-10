@@ -7,17 +7,18 @@
 				<img src="{{movie.poster_movie}}">
 			</div>
 			<div class="content">
-				<a class="td" href="#">{{movie}} </a> <span class="movie-year"> ({{movie.year_movie}})</span> 
+				<a class="td" href="#">{{movie}} </a> <span class="movie-year"> ({{movie.year_movie}})</span>
 				<p class="text-muted" style="margin-top: 8px; font-size: 12px;">
 					<span class="runtime">{{movie.duration_movie}}</span>
 					<span class="ghost">|</span>
 					{% for genre in genre_list %}
-						<span class="genre">{{genre.id_genre}}</span>
+					<span class="genre">{{genre.id_genre}}</span>
 					{% endfor %}
-					
+
 				</p>
-				<div class="rating" >
-					<i class="fas fa-star" style="font-size: 30px; border-bottom: 5px; color: yellow;"></i> {{movie.rating_movie}}                 
+				<div class="rating">
+					<i class="fas fa-star" style="font-size: 30px; border-bottom: 5px; color: yellow;"></i>
+					{{movie.rating_movie}}
 					<i class="far fa-star" style="margin-left: 40px; cursor: pointer;"></i> Rate
 				</div>
 				<p class="text-muted-2">
@@ -26,12 +27,14 @@
 				<p class="caster">
 					Director:
 					{% for director in director_list %}
-						<a class="cast" href="https://vi.wikipedia.org/wiki/{{director.id_name}}" target="_blank">{{director.id_name}}</a>,
+					<a class="cast" href="{% url 'imdb:name_detail' director.id_name.id_name %}"
+						target="_blank">{{director.id_name}}</a>,
 					{% endfor %}
 					<br> <br>
 					Star:
 					{% for cast in cast_list %}
-						<a class="cast" href="https://vi.wikipedia.org/wiki/{{cast.id_name}}" target="_blank">{{cast.id_name}}</a>,
+					<a class="cast" href="{% url 'imdb:name_detail' cast.id_name.id_name %}"
+						target="_blank">{{cast.id_name}}</a>,
 					{% endfor %}
 
 				</p>
@@ -48,18 +51,23 @@
 		<section class="trailer">
 			<h3 style="color: yellow;">Trailer</h3>
 			<div class="trailer_frame">
-				<iframe width="560" height="315" src="{{movie.trailer_movie}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe width="560" height="315" src="{{movie.trailer_movie}}" frameborder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
 			</div>
 		</section>
-		
+
 		<section class="FBcomment">
 			<h3 style="color: yellow; padding-left: 20px;">Bình luận về phim</h3>
 			<div id="fb-root"></div>
-			<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=252464779146967&autoLogAppEvents=1"></script>
-			<div class="fb-comments" data-colorscheme="dark" data-href="https://uetimdb.herokuapp.com/movie/{{movie.id_movie}}" data-numposts="5" data-width="100%"></div>		
+			<script async defer crossorigin="anonymous"
+				src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0&appId=252464779146967&autoLogAppEvents=1"></script>
+			<div class="fb-comments" data-colorscheme="dark"
+				data-href="https://uetimdb.herokuapp.com/movie/{{movie.id_movie}}" data-numposts="5" data-width="100%">
+			</div>
 		</section>
 	</div>
 </main>>
-		
-		
-		{% endblock body %}
+
+
+{% endblock body %}

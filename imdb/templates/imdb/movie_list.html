@@ -10,8 +10,8 @@
 				<div class="caption">
 					<div class="captioninside">
 						<h2 style="font-family: sans-serif; margin-bottom: 5px;">Avenger: End Game</h3>
-						<p>The Last War</p>
-						<a href="{% url 'imdb:movie_detail' 4154796 %}" class="playbutton">View Details</a>
+							<p>The Last War</p>
+							<a href="{% url 'imdb:movie_detail' 4154796 %}" class="playbutton">View Details</a>
 					</div>
 				</div>
 			</div>
@@ -55,31 +55,31 @@
 
 		</div>
 		{% if is_paginated %}
-			<nav class="pagination">
-				<ul>
-					{% if page_obj.has_previous %}
-						<li><a href="?page={{ page_obj.previous_page_number }}">Prev</a></li>
-					{% else %}
-						<li class="disabled"></li>
-					{% endif %}
+		<nav class="pagination">
+			<ul>
+				{% if page_obj.has_previous %}
+				<li><a href="?page={{ page_obj.previous_page_number }}">Prev</a></li>
+				{% else %}
+				<li class="disabled"></li>
+				{% endif %}
 
-					{% for pages in page_obj.paginator.page_range %}
-						{% if object_list.number == pages %}
-							<li><a href="#">{{pages}}</a></li>
-						{% else %}
-							<li><a href="?page={{pages}}">{{pages}}</a></li>
-						{% endif %}
-					{% endfor %}
-					
-					{% if page_obj.has_next %}
-						<li><a href="?page={{ page_obj.next_page_number }}">Next</a></li>
-					{% else %}
-						<li class="disabled"></li>
-					{% endif %}
-				</ul>
-			</nav>
+				{% for pages in page_obj.paginator.page_range %}
+				{% if object_list.number == pages %}
+				<li><a href="#">{{pages}}</a></li>
+				{% else %}
+				<li><a href="?page={{pages}}">{{pages}}</a></li>
+				{% endif %}
+				{% endfor %}
+
+				{% if page_obj.has_next %}
+				<li><a href="?page={{ page_obj.next_page_number }}">Next</a></li>
+				{% else %}
+				<li class="disabled"></li>
+				{% endif %}
+			</ul>
+		</nav>
 		{% endif %}
-			
+
 	</section>
 
 </main>

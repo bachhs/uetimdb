@@ -50,6 +50,11 @@ class MovieSearch(ListView):
         return object_list
 
 
+class NameList(ListView):
+    model = Name
+    paginate_by = 15
+
+
 class NameDetail(DetailView):
     model = Name
 
@@ -59,4 +64,6 @@ class NameDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['movie_list'] = Movie_Cast.objects.filter(
+            id_name=self.get_object().id_name)
         return context
