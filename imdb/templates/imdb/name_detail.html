@@ -51,6 +51,7 @@
                     </h3>
                     
                     {% for director in director_list %}
+                    <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
 					<a class="cast" href="{% url 'imdb:name_detail' director.id_name.id_name %}"
                         target="_blank">{{director.id_name}}</a>
                     <br> <br>
