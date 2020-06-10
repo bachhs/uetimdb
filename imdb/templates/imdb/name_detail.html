@@ -44,6 +44,18 @@
                         <span id="more">{{name.bio_name|slice:"200:"}}</span>
                         <button onclick="myFunction()" id="myBtn">Read more</button>
                 </div>
+                <div class="Cinematography ">
+                    <h3 style="color: yellow; opacity: 0.8; font-size: 28px; margin-top: 10px; margin-bottom: 8px;">
+                        <i class="fas fa-film" style="color: aqua; font-size: 15px;"></i>
+                        Filmography
+                    </h3>
+                    
+                    {% for director in director_list %}
+					<a class="cast" href="{% url 'imdb:name_detail' director.id_name.id_name %}"
+                        target="_blank">{{director.id_name}}</a>
+                    <br> <br>
+					{% endfor %}
+                </div>
 
             </div>
         </section>
