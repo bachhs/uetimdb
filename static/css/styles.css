@@ -91,9 +91,9 @@ body{font-family: arial,sans-serif; background-color: #191919; position: relativ
 
 .footer{float: left; width: 100%; margin: 30px 0 0 0; text-align: center;}
 .copyright{float: left;width: 100%; text-align: center; color:#fff; font-size: 14px; padding: 20px 0;}
-.footermenu{float: left; width: 100%; text-align: center;}
+.footermenu{float: left; width: 100%; text-align: center;} 
 .footermenu ul{float: left; width: 100%; text-align: center;}
-.footermenu ul li{display: inline; list-style: none; padding: 0 10px;}
+.footermenu ul li{display: inline; list-style: none; padding: 0 10px; margin: 0 5px;border: 1px silver solid; border-radius: 10px;}
 .footermenu ul li a{text-decoration: none; color:#fff;font-size: 14px;}
 
 .tags{float: left; width: 100%; text-align: center; padding: 30px 0 100px 0;}
@@ -271,6 +271,42 @@ body{font-family: arial,sans-serif; background-color: #191919; position: relativ
 	margin-top: 30px;
 	background-color: #202020;
 	
+}
+
+.Filmography1{
+	color: #f5f5f5d6;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+.Filmography1:hover{
+	text-decoration: underline;
+	color: rgb(60, 255, 0);
+	opacity: 0.8;
+}
+
+.admin i{
+	color: silver; 
+	font-size: 25px; 
+	float: left; 
+	position: absolute; 
+	margin-left: 950px;
+	transition: 0.5s;
+}
+.admin i:hover{
+	color: red;
+	transition: 0.5s;
+	font-size: 30px;
+}
+
+.iconfooter i{
+	color: #a0a0a0;
+	font-size: 37px;
+	margin-left: 13px;
+}
+
+.iconfooter{
+	margin-bottom: 20px;
 }
 
 @media all and (max-width: 1024px){

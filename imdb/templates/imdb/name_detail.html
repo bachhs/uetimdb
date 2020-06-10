@@ -37,8 +37,8 @@
                     </h3>
 
                     {% for movie in movie_list %}
-                    <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
-                    <a class="cast" href="{% url 'imdb:movie_detail' movie.id_movie.id_movie %}"
+                    <i class="fas fa-hand-point-right" style="font-size: 12px; color: whitesmoke;"></i>
+                    <a class="Filmography1" href="{% url 'imdb:movie_detail' movie.id_movie.id_movie %}" title="Watch this"
                         target="_blank">{{movie.id_movie}}</a>
                     <br> <br>
                     {% endfor %}
