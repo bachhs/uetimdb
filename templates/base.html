@@ -16,7 +16,7 @@
 	<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
 	<script src="{% static 'js/script.js' %}"></script>
 	<style>
-	#more {display: none;}
+		#more {display: none;}
 	</style>
 </head>
 
@@ -24,11 +24,12 @@
 	<div class="wrapper">
 
 		<header class="header">
-			<figure class="logo"><a href="{% url 'imdb:movie_list' %}">
+			<figure class="logo"><a href="{% url 'imdb:movie_list' %}" title="Xem thông tin phim chất lượng siêu đẳng">
 					<h2>R U N E FILMS</h2>
 			</figure></a>
 			<nav class="menu">
-				<ul>
+				<ul>		
+					<li><a href="{% url 'imdb:movie_list' %}">Home</a></li>
 					<li><a href="{% url 'imdb:name_list' %}">Biography</a></li>
 					<li><a>Genres</a>
 						<ul>
@@ -52,6 +53,9 @@
 							<input type="submit" value="" class="mobsearchsubmit">
 						</form>
 					</li>
+					<li>
+						<a href="{% url 'admin:index' %}" title="Admin Login" ><i class="fas fa-user-circle" style="color: silver; font-size: 25px; float: left; position: absolute; margin-left: 950px;"></i></a>
+					</li>
 					
 				</ul>
 			</nav>
@@ -59,7 +63,6 @@
 				<input type="text" name="query" value="{{request.GET.q}}" class="searchfield" placeholder="Search...">
 				<input type="submit" value="" class="searchsubmit">
 			</form>
-			<a href="{% url 'admin:index' %}" class="playbutton">Login</a>
 			<div class="toggle"><img src="{% static 'img/menu.svg' %} "></div>
 		</header>
 
@@ -73,7 +76,7 @@
 			</div>
 			<div class="footermenu">
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="{% url 'imdb:movie_list' %}">Home</a></li>
 					<li><a href="contact.html">Contact</a></li>
 					<li><a href="cookie.html">Cookie</a></li>
 				</ul>
@@ -151,89 +154,25 @@
 						}
 					}
 				});
-
-				var mostswiper = new Swiper('.mostslider > .swiper-container', {
-					nextButton: '.most-next',
-					prevButton: '.most-prev',
-					slidesPerView: 8,
-					paginationClickable: true,
-					preventClicks: false,
-					preventClicksPropagation: false,
-					spaceBetween: 10,
-					breakpoints: {
-						320: {
-							slidesPerView: 3,
-							spaceBetween: 5
-						},
-
-						480: {
-							slidesPerView: 3,
-							spaceBetween: 5
-						},
-
-						768: {
-							slidesPerView: 5,
-							spaceBetween: 5
-						},
-						1024: {
-							slidesPerView: 6,
-							spaceBetween: 10
-						}
-					}
-				});
-
-				var topswiper = new Swiper('.topslider > .swiper-container', {
-					nextButton: '.top-next',
-					prevButton: '.top-prev',
-					slidesPerView: 8,
-					paginationClickable: true,
-					preventClicks: false,
-					preventClicksPropagation: false,
-					spaceBetween: 10,
-					breakpoints: {
-						320: {
-							slidesPerView: 3,
-							spaceBetween: 5
-						},
-
-						480: {
-							slidesPerView: 3,
-							spaceBetween: 5
-						},
-
-						768: {
-							slidesPerView: 5,
-							spaceBetween: 5
-						},
-						1024: {
-							slidesPerView: 6,
-							spaceBetween: 10
-						}
-					}
-				});
-
-			});
-
-
 		</script>
 
 		<script>
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
+			function myFunction() {
+  			var dots = document.getElementById("dots");
+  			var moreText = document.getElementById("more");
+  			var btnText = document.getElementById("myBtn");
 
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more"; 
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less"; 
-    moreText.style.display = "inline";
-  }
-}
-</script>
+			if (dots.style.display === "none") {
+				dots.style.display = "inline";
+				btnText.innerHTML = "Read more"; 
+				moreText.style.display = "none";
+			} else {
+				dots.style.display = "none";
+				btnText.innerHTML = "Read less"; 
+				moreText.style.display = "inline";
+			}
+		}
+		</script>
 
 
 	</div>
