@@ -18,16 +18,16 @@
                     Overview
                 </h3>
                 <ul class="caster">
-                    <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
+                    <i class="fas fa-hand-point-right" style="font-size: 12px; margin-left: 15px;"></i>
                     Born: {{name.dateOfBirth_name}}
                     <br> <br>
-                    <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
+                    <i class="fas fa-hand-point-right" style="font-size: 12px; margin-left: 15px;"></i>
                     Birth Name: {{name.birthName_name}}
                     <br> <br>
-                    <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
+                    <i class="fas fa-hand-point-right" style="font-size: 12px; margin-left: 15px;"></i>
                     Height: {{name.height_name}}
                     <br> <br>
-                    <i class="fas fa-hand-point-right" style="font-size: 12px;"></i>
+                    <i class="fas fa-hand-point-right" style="font-size: 12px; margin-left: 15px;"></i>
                     Died: {{name.dateOfDeath_name}}
                 </ul>
                 <div class="Filmography ">
@@ -36,18 +36,25 @@
                         Filmography
                     </h3>
 
+                    
+                    <i class="fas fa-dot-circle" style="font-size: 12px; color:  greenyellow;"></i> <span style="color: #f5f5f5d6; font-size: 25px; margin-left: 2px; ">Acted</span>
+                    <br> <br>
                     {% for movie in casted_list %}
-                    <i class="fas fa-hand-point-right" style="font-size: 12px; color: whitesmoke;"></i>
+                    <i class="fas fa-hand-point-right" style="font-size: 12px; color: #f5f5f5d6; margin-left: 15px;"></i>
                     <a class="Filmography1" href="{% url 'imdb:movie_detail' movie.id_movie.id_movie %}" title="Watch this"
                         target="_blank">{{movie.id_movie}}</a>
                     <br> <br>
                     {% endfor %}
+                                                  
+                    <i class="fas fa-dot-circle" style="font-size: 12px; color:  greenyellow;"></i> <span style="color: #f5f5f5d6; font-size: 25px; margin-left: 2px; ">Directed</span> 
+                    <br> <br>
                     {% for movie in directed_list %}
-                    <i class="fas fa-hand-point-right" style="font-size: 12px; color: whitesmoke;"></i>
+                    <i class="fas fa-hand-point-right" style="font-size: 12px; color: #f5f5f5d6; margin-left: 15px;"></i>
                     <a class="Filmography1" href="{% url 'imdb:movie_detail' movie.id_movie.id_movie %}" title="Watch this"
                         target="_blank">{{movie.id_movie}}</a>
                     <br> <br>
                     {% endfor %}
+                   
                 </div>
                 <div class="bio">
                     <h3 style="color: yellow; opacity: 0.8; font-size: 28px; margin-top: 12px; margin-bottom: 8px;">
@@ -57,7 +64,7 @@
 
                     <p style="color: #f5f5f5d6; font-family: Arial, Helvetica, sans-serif; font-weight: normal;
                         font-size: 15px; letter-spacing: 0.5px;">
-                        <i class="fas fa-hand-point-right" style="font-size: 12px; color: whitesmoke;"></i>
+                        <i class="fas fa-hand-point-right" style="font-size: 12px; color: #f5f5f5d6; margin-left: 15px;"></i>
                         {{name.bio_name|slice:":200"}}<span id="dots">...</span><span
                             id="more">{{name.bio_name|slice:"200:"}}</span>
                         <button onclick="myFunction()" id="myBtn">Read more</button>
