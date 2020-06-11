@@ -64,6 +64,8 @@ class NameDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['movie_list'] = Movie_Cast.objects.filter(
+        context['casted_list'] = Movie_Cast.objects.filter(
+            id_name=self.get_object().id_name)
+        context['directed_list'] = Movie_Director.objects.filter(
             id_name=self.get_object().id_name)
         return context

@@ -36,7 +36,13 @@
                         Filmography
                     </h3>
 
-                    {% for movie in movie_list %}
+                    {% for movie in casted_list %}
+                    <i class="fas fa-hand-point-right" style="font-size: 12px; color: whitesmoke;"></i>
+                    <a class="Filmography1" href="{% url 'imdb:movie_detail' movie.id_movie.id_movie %}" title="Watch this"
+                        target="_blank">{{movie.id_movie}}</a>
+                    <br> <br>
+                    {% endfor %}
+                    {% for movie in directed_list %}
                     <i class="fas fa-hand-point-right" style="font-size: 12px; color: whitesmoke;"></i>
                     <a class="Filmography1" href="{% url 'imdb:movie_detail' movie.id_movie.id_movie %}" title="Watch this"
                         target="_blank">{{movie.id_movie}}</a>
