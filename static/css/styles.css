@@ -177,6 +177,7 @@ body{font-family: arial,sans-serif; background-color: #191919; position: relativ
 	font-size: 30px;
 	margin-top: 15px;
 	margin-left: 10px;
+	text-decoration: none;
 }
 
 .movie-image img{
