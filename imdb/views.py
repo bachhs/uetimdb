@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from django.db.models import QuerySet
+from django.db.models import QuerySet, Q
 from .models import Movie, Name, Genre, Movie_Cast, Movie_Director, Movie_Genre
 
 
@@ -34,10 +34,8 @@ class MovieSearch(ListView):
     def get_queryset(self):
         query = self.request.GET.get('query')
         if query:
-            object_list = self.model.objects.filter(
-                title_movie__icontains=query)
-            print(query)
-            print(object_list)
+            object_list = self.model.objects.filter(Q(
+                title_movie__icontains=query) | Q(year_movie__icontains=query))
         else:
             object_list = self.model.objects.none()
         return object_list

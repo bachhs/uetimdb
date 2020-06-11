@@ -54,10 +54,10 @@
 					</li>
 					<li><a>Year</a>
 						<ul>
-							<li><a href="year.html">2020</a></li>
-							<li><a href="year.html">2019</a></li>
-							<li><a href="year.html">2018</a></li>
-							<li><a href="year.html">2017</a></li>
+							<li><a href="{% url 'imdb:movie_search' %}?query=2019">2019</a></li>
+							<li><a href="{% url 'imdb:movie_search' %}?query=2018">2018</a></li>
+							<li><a href="{% url 'imdb:movie_search' %}?query=2017">2017</a></li>
+							<li><a href="{% url 'imdb:movie_search' %}?query=2016">2016</a></li>
 						</ul>
 					</li>
 					<li class="mobsearch">
