@@ -215,20 +215,40 @@ body{font-family: arial,sans-serif; background-color: #191919; position: relativ
 	color: #ffffffde;
 }
 
+.ngoac{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	color: #cddc61;
+}
+
+.movie-year:hover{
+	color: aqua;
+	opacity: 0.8;
+	text-decoration: underline;
+}
+
 .movie-year{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 30px;
-	letter-spacing: 1.5px;
-	margin-left: 2px;
 	color: #cddc61;
+	text-decoration: none;
 }
+
 
 .runtime{
 	color: silver;
 }
 
+.genre:hover{
+	color: aqua;
+	opacity: 0.8;
+	text-decoration: underline;
+}
+
 .genre{
 	color: silver;
+	text-decoration: none;
+	margin-right: 3px;
 }
 
 .text-muted-2{

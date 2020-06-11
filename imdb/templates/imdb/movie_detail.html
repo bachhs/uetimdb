@@ -7,7 +7,10 @@
 				<img src="{{movie.poster_movie}}">
 			</div>
 			<div class="content">
-				<a class="td" href="#">{{movie}} </a> <a class="movie-year" href="{% url 'imdb:movie_search' %}?query={{movie.year_movie}}"> ({{movie.year_movie}})</a>
+				<a class="td" href="#">{{movie}} </a>
+				<span class="ngoac">(</span> 
+				<a class="movie-year" href="{% url 'imdb:movie_search' %}?query={{movie.year_movie}}">{{movie.year_movie}}</a>
+				<span class="ngoac">)</span>
 				<p class="text-muted" style="margin-top: 8px; font-size: 12px;">
 					<span class="runtime">{{movie.duration_movie}}</span>
 					<span class="ghost">|</span>
