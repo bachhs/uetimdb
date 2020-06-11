@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import MovieList, MovieDetail, MovieSearch, NameList, NameDetail
+from .views import MovieList, MovieDetail, MovieSearch, NameList, NameDetail, GenreDetail
 
 app_name = 'imdb'
 
@@ -9,4 +9,5 @@ urlpatterns = [
     path('search/', MovieSearch.as_view(), name='movie_search'),
     path('name/', NameList.as_view(), name='name_list'),
     path('name/<int:pk>', NameDetail.as_view(), name='name_detail'),
+    path('genre/<int:pk>', GenreDetail.as_view(), name='genre_detail'),
 ]

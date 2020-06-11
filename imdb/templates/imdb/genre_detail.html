@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<main class="content">
+	<section class="centered">
+		<div class="movies">
+			{% for movie in movie_list %}
+			<div class="mov">
+				<a href="{% url 'imdb:movie_detail' movie.id_movie.id_movie %}">
+					<img alt="{{movie.id_movie.title_movie}}" height="300" src="{{movie.id_movie.poster_movie}}"
+						width="200">
+					<h2 class="movietitle">{{movie.id_movie.title_movie}}</h2>
+				</a>
+			</div>
+			{% endfor %}
+
+		</div>
+	</section>
+
+</main>
+{% endblock body %}

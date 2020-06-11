@@ -12,7 +12,7 @@
 					<span class="runtime">{{movie.duration_movie}}</span>
 					<span class="ghost">|</span>
 					{% for genre in genre_list %}
-					<span class="genre">{{genre.id_genre}}</span>
+					<a class="genre" href={% url 'imdb:genre_detail' genre.id_genre.id_genre %}>{{genre.id_genre}}</a>
 					{% endfor %}
 
 				</p>

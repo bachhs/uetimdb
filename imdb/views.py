@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.db.models import QuerySet
-from .models import Movie, Movie_Cast, Movie_Director, Movie_Genre, Name
+from .models import Movie, Name, Genre, Movie_Cast, Movie_Director, Movie_Genre
 
 
 class MovieList(ListView):
@@ -25,13 +25,6 @@ class MovieDetail(DetailView):
         context['genre_list'] = Movie_Genre.objects.filter(
             id_movie=self.get_object().id_movie)
         return context
-
-
-class MovieGenre(ListView):
-    model = Movie
-
-    def get_queryset(self):
-        return super().get_queryset()
 
 
 class MovieSearch(ListView):
@@ -68,4 +61,19 @@ class NameDetail(DetailView):
             id_name=self.get_object().id_name)
         context['directed_list'] = Movie_Director.objects.filter(
             id_name=self.get_object().id_name)
+        return context
+
+
+class GenreDetail(DetailView):
+    model = Genre
+    paginate_by = 15
+
+    def get_object(self):
+        object = super(GenreDetail, self).get_object()
+        return object
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['movie_list'] = Movie_Genre.objects.filter(
+            id_genre=self.get_object().id_genre)
         return context

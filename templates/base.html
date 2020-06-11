@@ -16,7 +16,9 @@
 	<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
 	<script src="{% static 'js/script.js' %}"></script>
 	<style>
-		#more {display: none;}
+		#more {
+			display: none;
+		}
 	</style>
 </head>
 
@@ -28,15 +30,26 @@
 					<h2>R U N E FILMS</h2>
 			</figure></a>
 			<nav class="menu">
-				<ul>		
+				<ul>
 					<li><a href="{% url 'imdb:movie_list' %}">Home</a></li>
 					<li><a href="{% url 'imdb:name_list' %}">Biography</a></li>
 					<li><a>Genres</a>
 						<ul>
-							<li><a href="genre.html">Action</a></li>
-							<li><a href="genre.html">Comedy</a></li>
-							<li><a href="genre.html">Drama</a></li>
-							<li><a href="genre.html">Romance</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 7 %}">Action</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 2 %}">Adventure</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 1 %}">Animation</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 12 %}">Biography</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 4 %}">Comedy</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 9 %}">Crime</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 3 %}">Drama</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 16 %}">Family</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 11 %}">Fantasy</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 20 %}">Film-Noir</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 13 %}">History</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 19 %}">Horror</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 18 %}">Music</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 5 %}">Musical</a></li>
+							<li><a href="{% url 'imdb:genre_detail' 17 %} ">Mystery</a></li>
 						</ul>
 					</li>
 					<li><a>Year</a>
@@ -48,15 +61,17 @@
 						</ul>
 					</li>
 					<li class="mobsearch">
-						<form class="mobform" method="GET"> 
-							<input type="text" name="query" value="{{request.GET.q}}" class="mobsearchfield" placeholder="Search...">
+						<form class="mobform" method="GET">
+							<input type="text" name="query" value="{{request.GET.q}}" class="mobsearchfield"
+								placeholder="Search...">
 							<input type="submit" value="" class="mobsearchsubmit">
 						</form>
 					</li>
 					<li>
-						<a class="admin" href="{% url 'admin:index' %}" title="Admin Login" ><i class="fas fa-user-circle" ></i></a>
+						<a class="admin" href="{% url 'admin:index' %}" title="Admin Login"><i
+								class="fas fa-user-circle"></i></a>
 					</li>
-					
+
 				</ul>
 			</nav>
 			<form class="search" method="GET" action="{% url 'imdb:movie_search' %}">
@@ -73,16 +88,20 @@
 		<footer class="footer">
 			<div class="iconfooter">
 				<a href="https://www.facebook.com/zuck" target="_blank"><i class="fab fa-facebook-square"></i></a>
-				<a href="https://www.instagram.com/cristiano/?hl=vi" target="_blank"><i class="fab fa-instagram-square"></i></a>
+				<a href="https://www.instagram.com/cristiano/?hl=vi" target="_blank"><i
+						class="fab fa-instagram-square"></i></a>
 				<a href="https://twitter.com/potus" target="_blank"><i class="fab fa-twitter"></i></a>
-				<a href="https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw" target="_blank"><i class="fab fa-youtube"></i></a>
+				<a href="https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw" target="_blank"><i
+						class="fab fa-youtube"></i></a>
 				<a href="https://github.com/bachhs/uetimdb" target="_blank"><i class="fab fa-github"></i></a>
 			</div>
 			<div class="footermenu">
 				<ul>
 					<li><a href="{% url 'imdb:movie_list' %}" title="Back to Homepage">Home</a></li>
-					<li><a href="https://www.facebook.com/bachhs" title="Send email feedback to 18020193@vnu.edu.vn">Contact</a></li>
-					<li><a href="https://www.facebook.com/Alpabulous" title="Customer Service: 18020400@vnu.edu.vn">Cookie</a></li>
+					<li><a href="https://www.facebook.com/bachhs"
+							title="Send email feedback to 18020193@vnu.edu.vn">Contact</a></li>
+					<li><a href="https://www.facebook.com/Alpabulous"
+							title="Customer Service: 18020400@vnu.edu.vn">Cookie</a></li>
 				</ul>
 			</div>
 			<div class="tags">
@@ -163,21 +182,21 @@
 		</script>
 
 		<script>
-			function myFunction() {
-  			var dots = document.getElementById("dots");
-  			var moreText = document.getElementById("more");
-  			var btnText = document.getElementById("myBtn");
+				function myFunction() {
+					var dots = document.getElementById("dots");
+					var moreText = document.getElementById("more");
+					var btnText = document.getElementById("myBtn");
 
-			if (dots.style.display === "none") {
-				dots.style.display = "inline";
-				btnText.innerHTML = "Read more"; 
-				moreText.style.display = "none";
-			} else {
-				dots.style.display = "none";
-				btnText.innerHTML = "Read less"; 
-				moreText.style.display = "inline";
-			}
-		}
+					if (dots.style.display === "none") {
+						dots.style.display = "inline";
+						btnText.innerHTML = "Read more";
+						moreText.style.display = "none";
+					} else {
+						dots.style.display = "none";
+						btnText.innerHTML = "Read less";
+						moreText.style.display = "inline";
+					}
+				}
 		</script>
 
 
