@@ -58,24 +58,24 @@
 		<nav class="pagination">
 			<ul>
 				{% if page_obj.has_previous %}
-				<li><a href="?page={{ page_obj.previous_page_number }}">Prev</a></li>
-				{% else %}
-				<li class="disabled"></li>
+				<li><a href="?page=1">First</a></li>
+				<li><a href="?page={{page_obj.previous_page_number}}">Prev</a></li>
 				{% endif %}
 
-				{% for pages in page_obj.paginator.page_range %}
-				{% if object_list.number == pages %}
-				<li><a href="#">{{pages}}</a></li>
-				{% else %}
-				<li><a href="?page={{pages}}">{{pages}}</a></li>
-				{% endif %}
-				{% endfor %}
-
+				{% for page in page_obj.paginator.page_range %}
+					{% if page_obj.number == page %}
+            			<li><a href="">{{page}}</a></li>
+        			{% elif page > page_obj.number|add:'-3' and page < page_obj.number|add:'3' %}
+            			<li><a href="?page={{page}}">{{page}}</a></li>
+        			{% endif %}
+    			{% endfor %}
+				
 				{% if page_obj.has_next %}
-				<li><a href="?page={{ page_obj.next_page_number }}">Next</a></li>
+					<li><a href="?page={{page_obj.next_page_number}}">Next</a></li>
+					<li><a href="?page={{page_obj.paginator.num_pages}}">Last</a></li>
 				{% else %}
-				<li class="disabled"></li>
 				{% endif %}
+				
 			</ul>
 		</nav>
 		{% endif %}
