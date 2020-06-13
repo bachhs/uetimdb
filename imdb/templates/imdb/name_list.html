@@ -9,11 +9,11 @@
 			<div class="mov">
 				<a href="{% url 'imdb:name_detail' name.id_name %}">
 					{% if name.poster_name %}
-					<img alt="{{name.name_name}}" height="300" src="{{name.poster_name}}" width="200">
+					<img alt="{{name.name_name}}" height="294" src="{{name.poster_name}}" width="201">
 					{% else %}
-					<img alt="{{name.name_name}}" height="300"
+					<img alt="{{name.name_name}}" height="294"
 						src="https://m.media-amazon.com/images/G/01/imdb/images/nopicture/medium/name-2135195744._CB466677935_.png"
-						width="200">
+						width="201">
 					{% endif %}
 
 					<h2 class="movietitle">{{name.name_name}}</h2>
