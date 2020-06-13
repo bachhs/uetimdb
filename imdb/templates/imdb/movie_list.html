@@ -47,7 +47,7 @@
 			{% for movie in object_list %}
 			<div class="mov">
 				<a href="{% url 'imdb:movie_detail' movie.id_movie %}">
-					<img alt="{{movie.title_movie}}" height="300" src="{{movie.poster_movie}}" width="200">
+					<img alt="{{movie.title_movie}}" height="294" src="{{movie.poster_movie}}" width="201">
 					<h2 class="movietitle">{{movie.title_movie}}</h2>
 				</a>
 			</div>
@@ -63,19 +63,19 @@
 				{% endif %}
 
 				{% for page in page_obj.paginator.page_range %}
-					{% if page_obj.number == page %}
-            			<li><a href="">{{page}}</a></li>
-        			{% elif page > page_obj.number|add:'-3' and page < page_obj.number|add:'3' %}
-            			<li><a href="?page={{page}}">{{page}}</a></li>
-        			{% endif %}
-    			{% endfor %}
-				
+				{% if page_obj.number == page %}
+				<li><a href="">{{page}}</a></li>
+				{% elif page > page_obj.number|add:'-3' and page < page_obj.number|add:'3' %}
+				<li><a href="?page={{page}}">{{page}}</a></li>
+				{% endif %}
+				{% endfor %}
+
 				{% if page_obj.has_next %}
-					<li><a href="?page={{page_obj.next_page_number}}">Next</a></li>
-					<li><a href="?page={{page_obj.paginator.num_pages}}">Last</a></li>
+				<li><a href="?page={{page_obj.next_page_number}}">Next</a></li>
+				<li><a href="?page={{page_obj.paginator.num_pages}}">Last</a></li>
 				{% else %}
 				{% endif %}
-				
+
 			</ul>
 		</nav>
 		{% endif %}
