@@ -1,4 +1,4 @@
-#  UETIMDB
+#  UETIMDb
 
 ### Link
 
@@ -13,4 +13,4 @@ Database của website được crawl từ [IMDb](https://www.imdb.com/ "IMDb")
 ![](https://img.shields.io/badge/python-3.8-green) ![](https://img.shields.io/badge/django-3.0.7-green) ![](https://img.shields.io/badge/database-mysql-green) ![](https://img.shields.io/badge/frontend-html-green)  ![](https://img.shields.io/badge/frontend-css-green)  ![](https://img.shields.io/badge/frontend-javascript-green)  
 
 ### Báo cáo chi tiết của dự án:
-[https://github.com/bachhs/uetimdb/tree/master/doc](https://github.com/bachhs/uetimdb/tree/master/doc "https://github.com/bachhs/uetimdb/tree/master/doc")
+[https://github.com/bachhs/uetimdb/tree/master/DOC](https://github.com/bachhs/uetimdb/tree/master/DOC "https://github.com/bachhs/uetimdb/tree/master/DOC")
