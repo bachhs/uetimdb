@@ -3,9 +3,13 @@
 ### Link
 
 [https://uetimdb.herokuapp.com/movie](https://uetimdb.herokuapp.com/movie "https://uetimdb.herokuapp.com/movie")
-Quản lí database tại [đây](https://uetimdb.herokuapp.com/admin/ "đây") :
+
+Quản lí database tại [https://uetimdb.herokuapp.com/admin/](https://uetimdb.herokuapp.com/admin/ "https://uetimdb.herokuapp.com/admin/")
+
 Tài khoản: admin
+
 Mật khẩu: admin
+
 Database của website được crawl từ [IMDb](https://www.imdb.com/ "IMDb")
 
 ### Công nghệ sử dụng
