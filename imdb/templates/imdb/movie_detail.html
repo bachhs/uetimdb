@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+
+{% block title %}{{movie.title_movie}} ({{movie.year_movie}}) - RUNE FILM{% endblock %}
+
 {% block body %}
 <main class="content">
 	<div class="single">
@@ -73,6 +76,4 @@
 		</section>
 	</div>
 </main>>
-
-
 {% endblock body %}
